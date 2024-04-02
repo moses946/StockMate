@@ -17,11 +17,16 @@ Partial Class Form3
     'Required by the Windows Form Designer
     Private components As System.ComponentModel.IContainer
 
+    Private Function GetAutoScaleMode() As AutoScaleMode
+        Return AutoScaleMode
+    End Function
+
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form3))
         Label1 = New Label()
         Label2 = New Label()
         Label3 = New Label()
@@ -108,9 +113,9 @@ Partial Class Form3
         ' 
         ' Form3
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
-        BackgroundImage = StockMate.Resources.inventory_background
+        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(800, 450)
         Controls.Add(Button1)
